@@ -32,7 +32,7 @@ def addMultipleSongs():
     songs = filedialog.askopenfilenames(initialdir='audio/', title="Choose A Song", filetypes=(("mp3 Files", "*.mp3"), ))
     #Loops through songs and replace directory info
     for song in songs:
-        song = song.replace("/YourDirectory/CSE155-FinalProject/venv/audio/", "")
+        song = song.replace("/YourDirectory/audio/", "")
         song = song.replace(".mp3", "")
         song_box.insert(END, song)
         song_box.select_set(0)
@@ -51,7 +51,7 @@ def deleteAllSongs():
 def play():
     song = song_box.get(ACTIVE)
     #Change this line to fit your directory again
-    song = f'/YourDirectory/CSE155-FinalProject/venv/audio/{song}.mp3'
+    song = f'/YourDirectory/audio/{song}.mp3'
 
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(loops=0)
@@ -88,7 +88,7 @@ def nextSong():
     #Grab song title from playlist
     song = song_box.get(nextOne)
 
-    song = f'/YourDirectory/CSE155-FinalProject/venv/audio/{song}.mp3'
+    song = f'/YourDirectory/audio/{song}.mp3'
 
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(loops=0)
@@ -108,7 +108,7 @@ def previousSong():
     # Grab song title from playlist
     song = song_box.get(nextOne)
 
-    song = f'/YourDirectory/CSE155-FinalProject/venv/audio/{song}.mp3'
+    song = f'/YourDirectory/audio/{song}.mp3'
 
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(loops=0)
